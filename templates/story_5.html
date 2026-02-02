@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Етап 5 {% endblock %}
+{% block content %}
+<div class="progress-container">
+    <div class="progress-bar">
+        <div class="progress-fill" style="width: 100%;"></div>
+    </div>
+    <p class="progress-text">Фінальний етап!</p>
+</div>
+
+<div class="content-card">
+    <h2>💌 Майже фініш...</h2>
+
+    <p class="story-text">
+        Останнє питання перед головним сюрпризом...<br>
+        Ти готовий побачити, що буде далі?
+    </p>
+
+    <div class="options">
+        <button class="choice-btn" data-choice="A" data-story="5">
+            A) Так, звісно!
+        </button>
+
+        <button class="choice-btn" data-choice="B" data-story="5">
+            B) Я завжди готовий!
+        </button>
+
+        <button class="choice-btn" data-choice="C" data-story="5">
+            C) Показуй вже!
+        </button>
+    </div>
+</div>
+{% endblock %}

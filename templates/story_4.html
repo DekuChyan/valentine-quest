@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Етап 4 {% endblock %}
+{% block content %}
+<div class="progress-container">
+    <div class="progress-bar">
+        <div class="progress-fill" style="width: 80%;"></div>
+    </div>
+    <p class="progress-text">Етап 4 з 5</p>
+</div>
+
+<div class="content-card">
+    <h2>💌 Питання 4</h2>
+
+    <p class="story-text">
+        Питання про пам'ятну дату або смішний випадок?
+    </p>
+
+    <div class="options">
+        <button class="choice-btn" data-choice="A" data-story="4">
+            A) PUBG Mobile
+        </button>
+
+        <button class="choice-btn" data-choice="B" data-story="4">
+            B) Garry's Mod
+        </button>
+
+        <button class="choice-btn" data-choice="C" data-story="4">
+            C) My Hero Academia
+        </button>
+    </div>
+</div>
+{% endblock %}

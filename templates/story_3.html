@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Етап 3 {% endblock %}
+{% block content %}
+<div class="progress-container">
+    <div class="progress-bar">
+        <div class="progress-fill" style="width: 60%;"></div>
+    </div>
+    <p class="progress-text">Етап 3 з 5</p>
+</div>
+
+<div class="content-card">
+    <h2>💌 Питання 3</h2>
+
+    <p class="story-text">
+        Яка моя улюблена страва, яку ти готуєш?
+    </p>
+
+    <div class="options">
+        <button class="choice-btn" data-choice="A" data-story="3">
+            A) Локшина
+        </button>
+
+        <button class="choice-btn" data-choice="B" data-story="3">
+            B) Шаурма
+        </button>
+
+        <button class="choice-btn" data-choice="C" data-story="3">
+            C) Пиріжок
+        </button>
+    </div>
+</div>
+{% endblock %}

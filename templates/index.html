@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Початок історії {% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <div class="heart-icon pulse">💝</div>
+
+    <h1 class="title">Valentine's Quest</h1>
+    <h2 class="subtitle">Інтерактивна історія для тебе</h2>
+
+    <div class="description">
+        <p>Привіт, моє сонечко! </p>
+        <p>Я підготувала для тебе особливий квест.</p>
+        <p>Пройди через 5 етапів нашої історії,</p>
+        <p>і в кінці тебе чекає щось дуже важливе... </p>
+    </div>
+
+    <div class="media-container">
+        </div>
+
+    <p class="hint" style="margin-top: 20px;"><strong>Готовий почати?</strong><br>Натисни кнопку нижче! ️</p>
+
+    <a href="{{ url_for('story', story_num=1) }}" class="btn btn-primary">
+        Почати Квест
+        <span class="btn-arrow">→</span>
+    </a>
+</div>
+{% endblock %}

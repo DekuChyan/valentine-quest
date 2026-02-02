@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Фінал - Головне Питання {% endblock %}
+{% block content %}
+<div class="content-card">
+    <h1 class="finale-title"> Ти пройшов весь квест! </h1>
+
+    <p class="finale-subtitle fade-in-text">
+        Мій коханий, ти пройшов всі п'ять етапів нашої історії...<br>
+        Кожна відповідь показала мені, наскільки ти особливий
+    </p>
+
+    <div class="media-container">
+        </div>
+
+    <div class="big-question">
+        <p style="font-size: 0.6em; color: #ff6b9d; margin-bottom: 20px; font-weight: normal;">
+            А тепер... головне питання:
+        </p>
+        Чи хочеш ти бути зі мною завжди?<br>
+        Будувати наше майбутнє разом?
+    </div>
+
+    <div class="answer-buttons">
+        <button class="btn btn-yes">
+            ТАК! Я хочу бути з тобою завжди!
+        </button>
+    </div>
+
+    <div class="final-reveal">
+        <h2 class="reveal-title"> Я так рада!</h2>
+        <p class="reveal-text">
+            Ти - найкраще, що сталось зі мною.<br>
+            Кожен день з тобою - це нова пригода!
+        </p>
+
+        <div class="media-container" style="margin: 30px 0;">
+             </div>
+        <video id="final-video" controls class="finale-video" style="width: 100%; border-radius: 20px; display: none;">
+                <source src="{{ url_for('static', filename='video/iloveyou.mp4') }}" type="video/mp4">
+                Ваш браузер не підтримує відео.
+            </video>
+
+            <audio id="final-audio" controls style="width: 100%; margin-top: 15px; display: none;">
+                <source src="{{ url_for('static', filename='audio/hello.mp3') }}" type="audio/mpeg">
+            </audio>
+
+        </div>
+
+        <p class="signature">
+            <strong>Я кохаю тебе більше, ніж слова можуть передати.. ️</strong><br>
+            Твоя назавжди 💕
+        </p>
+    </div>
+{% endblock %}

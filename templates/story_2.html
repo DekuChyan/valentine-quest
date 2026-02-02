@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Етап 2 {% endblock %}
+{% block content %}
+<div class="progress-container">
+    <div class="progress-bar">
+        <div class="progress-fill" style="width: 40%;"></div>
+    </div>
+    <p class="progress-text">Етап 2 з 5</p>
+</div>
+
+<div class="content-card">
+    <h2>💌 Питання 2</h2>
+
+    <div class="story-image">
+        </div>
+
+    <p class="story-text">
+        Де ми вперше зустрілися?
+    </p>
+
+    <div class="options">
+        <button class="choice-btn" data-choice="A" data-story="2">
+            A) У парку
+        </button>
+
+        <button class="choice-btn" data-choice="B" data-story="2">
+            B) В університеті
+        </button>
+
+        <button class="choice-btn" data-choice="C" data-story="2">
+            C) В інтернеті
+        </button>
+    </div>
+</div>
+{% endblock %}

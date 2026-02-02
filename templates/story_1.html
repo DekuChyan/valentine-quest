@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Етап 1 {% endblock %}
+{% block content %}
+<div class="progress-container">
+    <div class="progress-bar">
+        <div class="progress-fill" style="width: 20%;"></div>
+    </div>
+    <p class="progress-text">Етап 1 з 5</p>
+</div>
+
+<div class="content-card">
+    <h2>💌 Питання 1</h2>
+
+    <div class="story-image">
+        <img src="{{ url_for('static', filename='images/heartbeat.png') }}" alt="Hobby" class="img-responsive">
+    </div>
+
+    <p class="story-text">
+        Яке було моє перше хобі?..
+    </p>
+
+    <div class="options">
+        <button class="choice-btn" data-choice="A" data-story="1">
+            A) Читання книжок
+        </button>
+
+        <button class="choice-btn" data-choice="B" data-story="1">
+            B) Програмування
+        </button>
+
+        <button class="choice-btn" data-choice="C" data-story="1">
+            C) Косплей
+        </button>
+    </div>
+</div>
+{% endblock %}
