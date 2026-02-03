@@ -32,4 +32,9 @@
         </button>
     </div>
 </div>
+
+    <div id="dragon-container" style="display: none; position: fixed; z-index: 9999; pointer-events: none; width: 100px; height: 100px;">
+    <img src="{{ url_for('static', filename='images/dragon.gif') }}" alt="Dragon" style="width: 100%; height: 100%;">
+    <div id="dragon-msg" style="position: absolute; top: -30px; left: 20px; background: white; padding: 5px; border-radius: 10px; opacity: 0; transition: opacity 0.3s;">Ррр! 🔥</div>
+</div>
 {% endblock %}

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initButtonHandling();
     initSmoothScrolling();
     initFinale();
+    initDragonEgg();
 });
 
 /**
@@ -186,7 +187,6 @@ function initButtonHandling() {
     });
 }
 
-console.log('💝 Valentine Quest initialized! Made with love ❤️');
 
 /**
  * Логіка для фінального салюту
@@ -239,3 +239,101 @@ function initFinale() {
         });
     }
 }
+
+/**
+ * Easter Egg: Chasing Dragon
+ */
+function initDragonEgg() {
+    const dragon = document.getElementById('dragon-container');
+    const msg = document.getElementById('dragon-msg');
+
+    // Якщо дракона немає на сторінці (наприклад, це Story 1), виходимо
+    if (!dragon) return;
+
+    // Показуємо дракона
+    dragon.style.display = 'block';
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let dragonX = 0;
+    let dragonY = 0;
+
+    // Швидкість реакції (0.05 - повільно/ліниво, 0.2 - дуже швидко)
+    const speed = 0.08;
+
+    // Відстежуємо мишку
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // Анімація польоту
+    function animate() {
+        // Вираховуємо дистанцію
+        const distX = mouseX - dragonX;
+        const distY = mouseY - dragonY;
+
+        // Рухаємо дракона до мишки (плавно)
+        dragonX += distX * speed;
+        dragonY += distY * speed;
+
+        // Повертаємо дракона в бік руху (дзеркально)
+        if (distX > 0) {
+            dragon.style.transform = 'scaleX(-1)'; // Дивиться вправо
+            if (msg) msg.style.transform = 'scaleX(-1)'; // Текст щоб не дзеркалило
+        } else {
+            dragon.style.transform = 'scaleX(1)'; // Дивиться вліво
+            if (msg) msg.style.transform = 'scaleX(1)';
+        }
+
+        // Застосовуємо координати (центруємо дракона по курсору)
+        dragon.style.left = (dragonX - 50) + 'px'; // -50 це половина ширини дракона
+        dragon.style.top = (dragonY - 50) + 'px';
+
+        // Якщо дракон дуже близько до курсора - показуємо повідомлення
+        const distance = Math.sqrt(distX * distX + distY * distY);
+        if (distance < 30) {
+            if (msg) msg.style.opacity = '1';
+        } else {
+            if (msg) msg.style.opacity = '0';
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+}
+
+/**
+ * Creates a heart explosion effect
+ * Used in the finale sequence
+ */
+function createHeartExplosion() {
+    // Створюємо 50 сердечок
+    for (let i = 0; i < 50; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('explosion-heart');
+        heart.innerHTML = '💖'; // Можна міняти на ❤️, 💕, 💘
+
+        // Розміщуємо їх по центру екрана
+        heart.style.left = '50%';
+        heart.style.top = '50%';
+
+        // Генеруємо випадковий напрямок для CSS змінної --i
+        // Math.random() дає число від 0 до 1.
+        // Наш CSS використає це, щоб розкидати їх в різні боки.
+        heart.style.setProperty('--i', Math.random());
+
+        // Додаємо випадковий розмір
+        const size = 1 + Math.random() * 2; // Від 1rem до 3rem
+        heart.style.fontSize = `${size}rem`;
+
+        document.body.appendChild(heart);
+
+        // Видаляємо сердечко після анімації (3 секунди), щоб не забивати пам'ять
+        setTimeout(() => {
+            heart.remove();
+        }, 3000);
+    }
+}
+console.log('💝 Valentine Quest initialized! Made with love ❤️');
